@@ -1,0 +1,19 @@
+ {
+
+  "description": "Seamlessly integrate alternative purchasing options on game pages., These will link to both Is There Any Deal and the DRM Free alternative GOG",
+  "manifest_version": 2,
+  "name": "Purchase alternatives in Steam Store",
+  "version": "1.0",
+  "homepage_url": "http://pande.io",
+  "icons": {
+    "48": "icons/steam.png"
+  },
+
+  "content_scripts":[ 
+    {
+    "matches": ["http://store.steampowered.com/app/*"],
+    "js": ["main.js"]
+    }
+  ]
+}
+
