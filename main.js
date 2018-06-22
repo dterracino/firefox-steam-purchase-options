@@ -1,9 +1,9 @@
-"use strict"; 
+"use strict";
 
 
 function getAppName(){
   var nameElement = document.getElementsByClassName('apphub_AppName');
-  
+
   if(nameElement.length === 0) {
     return;
   }
@@ -16,10 +16,10 @@ function createLink(store){
   alternative.className += 'details_block';
   var link = document.createElement('a');
   link.className += 'linkbar';
-  
+
   if(store === 'isthereanydeal'){
     link.innerText = 'IsThereAnyDeal';
-    link.href = 'https://isthereanydeal.com/#/search:' + getAppName() + ';/scroll:%23gamelist'
+    link.href = 'https://isthereanydeal.com/search/?q=' + getAppName();
   }
 
   if(store === 'gog') {
@@ -37,7 +37,7 @@ function createHeader(){
   header.className += 'block_title';
   header.innerText = 'Other stores:';
   return header;
- 
+
 }
 
 function createDisplayArea(){
@@ -63,8 +63,8 @@ function insertIntoDOM(child){
 function shouldAddonRun(){
   if(!getAppName()){
     return false;
-  } 
- return true; 
+  }
+ return true;
 }
 
 if(shouldAddonRun()){
